@@ -1,7 +1,9 @@
-
-def shopping(list):
-    type_list = []
+"""Shopping List Tracker:"""
     
+def shopping(list):
+    """Function to track shopping list items."""
+    type_list = []
+
     while True:
         try:
             item_quantity = int(input("How many items did you buy while shopping today? "))
