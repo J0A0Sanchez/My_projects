@@ -1,9 +1,14 @@
 
 def shopping(list):
     type_list = []
-
-
-    item_quantity = int(input("How many items did you buy while shopping today? "))
+    
+    while True:
+        try:
+            item_quantity = int(input("How many items did you buy while shopping today? "))
+            break
+        except ValueError:
+            print("Invalid Input. Try again")
+            
     for c in range(1, item_quantity + 1):
         item = input(f"Enter the {c}º item: ").strip().title()
         if item in list:
@@ -18,13 +23,19 @@ def shopping(list):
     while True:
         additional_items = input("Do you want to add items to your shopping list? Type 'y' for yes or 'n' for no: ").strip().lower()
         if additional_items == "n":
+            print("\nThanks for checking and updating your shopping list!")
             break
+
         elif additional_items == "y":
-            item_quantity = int(input("How many items do you want to add? "))
-            for c in range(1, item_quantity + 1):
-                item = input(f"Enter the {c}º item to add: ").strip().title()
-                if item not in list:
-                    list.append(item)
+            try:
+                item_quantity = int(input("How many items do you want to add? "))
+                for c in range(1, item_quantity + 1):
+                    item = input(f"Enter the {c}º item to add: ").strip().title()
+                    if item not in list:
+                        list.append(item)
+            except ValueError:
+                print("Invalid input. Please try again!")
+
         else:
             print("Invalid input. Please type 'y' or 'n'.")
 
