@@ -62,7 +62,10 @@ def shapes(option):
 
 
 
-art = r"""
+
+
+def shapes_calculator():
+    art = r"""
    ______      __           __      __  _                _____ __                        ____                             __  _           __
   / ____/___ _/ /______  __/ /___ _/ /_(_)___  ____ _   / ___// /_  ____ _____  ___     / __ \_________  ____  ___  _____/ /_(_)__  _____/ /
  / /   / __ `/ / ___/ / / / / __ `/ __/ / __ \/ __ `/   \__ \/ __ \/ __ `/ __ \/ _ \   / /_/ / ___/ __ \/ __ \/ _ \/ ___/ __/ / _ \/ ___/ / 
@@ -70,11 +73,15 @@ art = r"""
 \____/\__,_/_/\___/\__,_/_/\__,_/\__/_/_/ /_/\__, /   /____/_/ /_/\__,_/ .___/\___/  /_/   /_/   \____/ .___/\___/_/   \__/_/\___/____(_)   
                                             /____/                    /_/                            /_/                                    
 """
-print(art)
+    print(art)
 
-continue_calculating = ""
-while continue_calculating != "n":
-    option = get_option()   
-    result = shapes(option)
-    print(result)
-    continue_calculating = str(input("Do you want to continue calculating? Type 'y' to continue and 'n' yo stp: "))
+    continue_calculating = ""
+    while continue_calculating != "n":
+        option = get_option()   
+        result = shapes(option)
+        print(result)
+        continue_calculating = str(input("Do you want to continue calculating? Type 'y' to continue and 'n' yo stp: "))
+
+
+
+shapes_calculator()
