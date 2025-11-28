@@ -1,4 +1,4 @@
-"""Shopping List Tracker:"""
+"""Task 2: Shopping List Tracker:"""
     
 def shopping(list):
     """Function to track shopping list items."""
