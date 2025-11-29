@@ -61,9 +61,6 @@ def shapes(option):
                 print("Invalid input. Please try again!")
 
 
-
-
-
 def shapes_calculator():
     art = r"""
    ______      __           __      __  _                _____ __                        ____                             __  _           __
