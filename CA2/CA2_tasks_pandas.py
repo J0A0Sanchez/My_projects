@@ -18,7 +18,7 @@ def my_df():
     for col in cols:
         df[col] = df[col].astype(str).str[-2:].astype(int)
 
-    # print(f"The columns {cols} have been changed.")
+    #print(f"The columns {cols} have been changed.")
     # print(df)
     # print("")
 
@@ -41,14 +41,17 @@ def df_generator(dataframe, subject=None):
     df_chemistry = dataframe[["Chemistry", "Name", "Surname"]]
     df_physics = dataframe[["Physics", "Name", "Surname"]]
     df_biology = dataframe[["Biology", "Name", "Surname"]]
+    df_altered = dataframe[["Name", "Total"]]
 
     df_chemistry = df_chemistry.sort_values(by="Surname")
     df_physics = df_physics.sort_values(by="Surname")
     df_biology = df_biology.sort_values(by="Surname")
+    df_altered = df_altered.sort_values(by="Name")
 
     df_chemistry.to_csv('C:\\Python Cursos\\My Projects\\df_chemistry.csv')
     df_physics.to_csv('C:\\Python Cursos\\My Projects\\df_physics.csv')
     df_biology.to_csv('C:\\Python Cursos\\My Projects\\df_biology.csv')
+    df_altered.to_csv('C:\\Python Cursos\\My Projects\\df_altered.csv')
 
     if subject == "Chemistry":
         return df_chemistry
@@ -72,8 +75,10 @@ def df_generator(dataframe, subject=None):
     # print("")
     # print(df_biology)
 
-df_altered = my_df()[["Name", "Total"]]
-#print(df_altered)
 
 
+# meudf = my_df()
+# print(meudf)
+
+#df_generator(my_df())
 
