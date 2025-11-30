@@ -1,5 +1,6 @@
 import pandas as pd
 
+#Task 1:
 def my_df():
     path = 'C:\\Python Cursos\\My Projects\\StudentGrades.csv'
     df = pd.read_csv(path)
@@ -30,13 +31,13 @@ def my_df():
 
 
     df["Total"] = (df["Chemistry"] * 0.5) + (df["Physics"] * 0.25) + (df["Biology"] * 0.25)
-    print(df)
+    #print(df)
     return df
 
 
 
-
-def df_analyser(dataframe):
+#Task 2:
+def df_generator(dataframe, subject=None):
     df_chemistry = dataframe[["Chemistry", "Name", "Surname"]]
     df_physics = dataframe[["Physics", "Name", "Surname"]]
     df_biology = dataframe[["Biology", "Name", "Surname"]]
@@ -48,15 +49,31 @@ def df_analyser(dataframe):
     df_chemistry.to_csv('C:\\Python Cursos\\My Projects\\df_chemistry.csv')
     df_physics.to_csv('C:\\Python Cursos\\My Projects\\df_physics.csv')
     df_biology.to_csv('C:\\Python Cursos\\My Projects\\df_biology.csv')
+
+    if subject == "Chemistry":
+        return df_chemistry
     
-    print(df_chemistry)
-    print("")
-    print(df_physics)
-    print("")
-    print(df_biology)
+    elif subject == "Physics":
+        return df_physics
+    
+    elif subject == "Biology":
+        return df_biology
+    
+    elif subject == "all":
+        return
+    
+    else:
+        print("Invalid DataFrame")
+        return None
+    
+    # print(df_chemistry)
+    # print("")
+    # print(df_physics)
+    # print("")
+    # print(df_biology)
+
+df_altered = my_df()[["Name", "Total"]]
+#print(df_altered)
 
 
 
-
-
-df_analyser(my_df())
