@@ -2,6 +2,7 @@ import pandas as pd
 
 #Task 1:
 def my_df():
+    """Function that receive a set csv file and return a DataFrame as per function changes"""
     path = 'C:\\Python Cursos\\My Projects\\StudentGrades.csv'
     df = pd.read_csv(path)
     # print("csv File:")
@@ -69,16 +70,7 @@ def df_generator(dataframe, subject=None):
         print("Invalid DataFrame")
         return None
     
-    # print(df_chemistry)
-    # print("")
-    # print(df_physics)
-    # print("")
-    # print(df_biology)
 
 
-
-# meudf = my_df()
-# print(meudf)
-
-#df_generator(my_df())
-
+df2 = df_generator(my_df(),"Chemistry")
+print(df2)

@@ -40,3 +40,4 @@ while stats != 'q':
         break
 
     df_choices(stats)
+
